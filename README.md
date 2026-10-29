@@ -34,8 +34,7 @@ neural-network implementation.
 - `tp2_sujet.pdf` — original assignment brief;
 - MNIST test images and labels, plus training labels.
 
-The MNIST training images required by the script are not included. The Python
-file also contains absolute local paths from the original development machine.
+The MNIST training images required by the script are not included.
 
 ## Reproducing the exercise
 
@@ -46,9 +45,10 @@ Requirements:
 - Matplotlib
 - the complete MNIST IDX dataset
 
-Before running the script, replace the absolute dataset paths with paths valid
-on your machine. No automated tests or reproducible training command are
-provided in the current version.
+Before running the script, place all four MNIST IDX files in the `mnist/`
+directory beside `numpy_nn_Esterbet.py`. Paths are resolved relative to the script.
+No automated tests or reproducible training command are provided in the current
+version.
 
 ## License
 

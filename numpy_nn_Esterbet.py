@@ -6,6 +6,7 @@
 
 #%%
 import struct
+from pathlib import Path
 import numpy as np
 import time
 import matplotlib.pyplot as plt
@@ -19,10 +20,11 @@ def read_idx(filename):
         return np.frombuffer(f.read(), dtype=np.uint8).reshape(shape)
 
 # Task 1: reading the MNIST files into Python ndarrays
-x_test = read_idx('/Users/julienesbt/Documents/Etudes/M1/BDA/TP/TP2/mnist/t10k-images.idx3-ubyte')
-y_test = read_idx('/Users/julienesbt/Documents/Etudes/M1/BDA/TP/TP2/mnist/t10k-labels.idx1-ubyte')
-x_train = read_idx('/Users/julienesbt/Documents/Etudes/M1/BDA/TP/TP2/mnist/train-images.idx3-ubyte')
-y_train = read_idx('/Users/julienesbt/Documents/Etudes/M1/BDA/TP/TP2/mnist/train-labels.idx1-ubyte')
+MNIST_DIR = Path(__file__).with_name('mnist')
+x_test = read_idx(MNIST_DIR / 't10k-images.idx3-ubyte')
+y_test = read_idx(MNIST_DIR / 't10k-labels.idx1-ubyte')
+x_train = read_idx(MNIST_DIR / 'train-images.idx3-ubyte')
+y_train = read_idx(MNIST_DIR / 'train-labels.idx1-ubyte')
 # print(x_test, y_test, x_train, y_train)
         
 # Task 2: visualize a few bitmap images
